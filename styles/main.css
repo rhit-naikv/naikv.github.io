@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Raleway&display=swap');
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+    --light-color:#0CECED;
+    --body-color: #00966C;
+    --heading-color:#787274;
+    --contrast-color:#0CED2E;
+    --dark-color:#7A6A2B;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Raleway', sans-serif;
+    background-image: radial-gradient(circle 8px at 92% 63%, rgb(255,250,85) 0%,transparent 22%),radial-gradient(circle 2px at 73% 80%, rgb(201,242,255) 0%,transparent 60%),radial-gradient(circle 2px at 88% 58%, rgb(201,242,255) 0%,transparent 5%),radial-gradient(circle 2px at 39% 24%, rgb(201,242,255) 0%,transparent 17%),radial-gradient(circle 2px at 31% 10%, rgb(201,242,255) 0%,transparent 83%),radial-gradient(circle 2px at 25% 64%, rgb(201,242,255) 0%,transparent 65%),radial-gradient(circle 2px at 46% 18%, rgb(201,242,255) 0%,transparent 86%),radial-gradient(circle 2px at 27% 89%, rgb(201,242,255) 0%,transparent 61%),radial-gradient(circle 2px at 72% 43%, rgb(201,242,255) 0%,transparent 46%),radial-gradient(circle 2px at 73% 2%, rgb(201,242,255) 0%,transparent 87%),radial-gradient(circle 5px at 94% 33%, rgb(253,250,147) 0%,transparent 93%),radial-gradient(circle 5px at 35% 87%, rgb(253,250,147) 0%,transparent 42%),radial-gradient(circle 4px at 78% 1%, rgb(255,249,27) 0%,transparent 76%),radial-gradient(circle 4px at 71% 51%, rgb(255,249,27) 0%,transparent 69%),radial-gradient(circle 4px at 26% 45%, rgb(255,249,27) 0%,transparent 83%),linear-gradient(90deg, rgb(35,35,35) 0%, rgb(35,35,35) 50%,rgb(35,35,35) 50%, rgb(35,35,35) 100%); background-size: 278px 278px;    
+    color: var(--body-color);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-family: 'Berkshire Swash', cursive;
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--body-color);
+    text-decoration-color: var(--contrast-color);
+}
+
+a:hover {
+    color: var(--contrast-color);
+}
+
+body#about img { 
+    height: 15em;
+    display: inline;
+    margin-right: var(--horizontal-space);
+    border: 1px solid var(--light-color);
+    box-shadow: -4px 5px 5px 1px rgba(0,0,0,0.75);
+    
+}
+
+@media screen and (min-width: 25em) {
+    body#about img { 
+        display: inline;
+        float: left;
+        margin-bottom: var(--vertical-space);
+    }
+    
+}
+
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                         "nav   nav"
+                         "main main"
+                         "foot foot";
+    grid-template-columns: auto 4fr;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: "head nav"
+                             "main  main"
+                             "foot foot";
+        grid-template-rows: auto 1fr auto;
+    }
+
+    body > nav {
+        grid-area: nav;
+        padding-top: var(--vertical-space);
+    
+    }
+
+    body > nav ul {
+        float: right;
+    }
+}
+
+body > * {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+body > header {
+    grid-area: head;
+}
+
+body > nav {
+    grid-area: nav;
+
+}
+
+body > main > *:first-child:before {
+    content: "";
+    border-top: 4px solid var(--dark-color);
+    display: block;
+    padding-top: var(--vertical-space);
+}
+
+body {
+    max-width: 50em;
+}
+
+body > nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2.4;
+}
+
+body > nav ul li {
+    display: inline-block;
+    padding-right: 1em;
+}
+
+body > main {
+    grid-area: main;
+}
+
+body > footer {
+    grid-area: foot;
+}
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+
+header {
+    padding-bottom: 0px;
+}
+
+header h1, footer h1 {
+    margin: 0;
+}
+
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
